@@ -64,6 +64,22 @@ def data_check3(imglist,imgdir):
     print(wrong_img)
     return wrong_img
 
+def img_rewrite(imglist,imgdir):
+    num = 0
+    for im in imglist:
+        num += 1
+        if num % 1000 == 0:
+            print('rest:',len(imglist)-num)
+        if im.split('.')[1] != 'jpg':
+            print(im)
+            name = imgdir + im
+            savename = imgdir + im.split('.')[0] + '.jpg'
+            img = cv2.imread(name)
+            cv2.imwrite(savename,img)
+    return
+
+    
+
 gt_check(imglist,gtdir)
 data_check1(imglist,imgdir)
 data_check2(imglist,imgdir)

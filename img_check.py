@@ -65,6 +65,7 @@ def data_check3(imglist,imgdir):
     return wrong_img
 
 def img_rewrite(imglist,imgdir):
+    '''transfer into jpg'''
     num = 0
     for im in imglist:
         num += 1
